@@ -60,3 +60,6 @@ li {
   font-size: 25px;
   font-weight: bold;
 }
+.active {
+  font-weight: bold;
+}

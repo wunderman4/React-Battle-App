@@ -24,6 +24,11 @@ const SelectLanguage = props => {
   );
 };
 
+SelectLanguage.PropTypes = {
+  selectedLanguage: PropTypes.string.isRequired,
+  onSelect: PropTypes.func.isRequired
+};
+
 const RepoGrid = props =>
   <ul className="popular-list">
     {props.repos.map((repo, index) => {
@@ -61,26 +66,17 @@ RepoGrid.PropTypes = {
   repos: PropTypes.array.isRequired
 };
 
-SelectLanguage.PropTypes = {
-  selectedLanguage: PropTypes.string.isRequired,
-  onSelect: PropTypes.func.isRequired
-};
-
 class Popular extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedLanguage: "All",
-      repos: null
-    };
-    this.updateLanguage = this.updateLanguage.bind(this);
-  }
+  state = {
+    selectedLanguage: "All",
+    repos: null
+  };
 
   componentDidMount() {
     this.updateLanguage(this.selectedLanguage);
   }
 
-  updateLanguage(lang) {
+  updateLanguage = lang => {
     this.setState(() => {
       return {
         selectedLanguage: lang,
@@ -95,7 +91,7 @@ class Popular extends React.Component {
         };
       });
     }); // I may need to add .bind(this)
-  }
+  };
   render() {
     return (
       <div>

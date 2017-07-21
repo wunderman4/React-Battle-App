@@ -1,13 +1,18 @@
 import Popular from "./Popular";
-var React = require("react");
-
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import React from "react";
+import Nav from "./Nav";
+//var React = require("react");
 //var Popular = require("./Popular");
+
 class App extends React.Component {
   render() {
     return (
-      <div className="container">
-        <Popular />
-      </div>
+      <Router>
+        <div className="container">
+          <Route path="/popular" Component={Popular} />
+        </div>
+      </Router>
     );
   }
 }
