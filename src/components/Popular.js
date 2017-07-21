@@ -1,6 +1,8 @@
 import * as api from "../utils/api";
-var React = require("react");
-var PropTypes = require("prop-types");
+import React from "react";
+import PropTypes from "prop-types";
+//var React = require("react");
+//var PropTypes = require("prop-types");
 //var api = require("../utils/api");
 
 const SelectLanguage = props => {

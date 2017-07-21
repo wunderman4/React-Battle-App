@@ -4,6 +4,7 @@ List of colors:
 Primary: #00E1FF (Light Blue)
 Secondary:  #CCB714 (Gold)
 Accent: #FF198E (Pink)
+Selected Link: #FF198E (Red)
 
 AltBlue: #129FB2
 AltGold: #B29F09
@@ -16,6 +17,12 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans,
     Ubuntu, Cantarell, Helvetica, Neue, sans-serif;
 }
+h1 {
+  margin-bottom: 5px;
+}
+p {
+  margin-top: 0px;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -25,6 +32,10 @@ ul {
 }
 li {
   list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 .languages {
   display: flex;
@@ -62,4 +73,45 @@ li {
 }
 .active {
   font-weight: bold;
+  color: #ff198e;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+}
+.nav li {
+  opacity: .90;
+  margin-right: 15px;
+}
+.nav li:hover {
+  opacity: 1;
+}
+.nav li:active {
+  transform: translateY(1px);
+}
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button {
+  opacity: .90;
+  color: #1a1a1a;
+  background: #ff198e;
+  border: none;
+  font-size: 16px;
+  border-radius: 3px;
+  width: 200px;
+  text-align: center;
+  display: block;
+  padding: 7px 0;
+  margin: 10px auto;
+}
+.button:hover:enabled {
+  opacity: 1;
+  background: #ff198e;
+  text-decoration: none;
+}
+.button:active {
+  transform: translateY(1px);
 }
