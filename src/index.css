@@ -37,6 +37,15 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.pop-link {
+  opacity: .9;
+  color: #ff198e;
+}
+.pop-link:hover {
+  opacity: 1;
+}
+
 .languages {
   display: flex;
   justify-content: center;
@@ -114,4 +123,14 @@ a {
 }
 .button:active {
   transform: translateY(1px);
+}
+.not-found {
+  margin-top: 70px;
+  text-align: center;
+}
+
+/* Battle Page  */
+.row {
+  display: flex;
+  justify-content: space-around;
 }

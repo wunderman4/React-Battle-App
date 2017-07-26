@@ -48,7 +48,7 @@ const RepoGrid = props =>
               />
             </li>
             <li>
-              <a href={repo.html_url}>
+              <a className="pop-link" href={repo.html_url}>
                 {repo.name}
               </a>
             </li>
