@@ -1,12 +1,12 @@
-import * as api from "../utils/api";
-import React from "react";
-import PropTypes from "prop-types";
+import * as api from '../utils/api';
+import React from 'react';
+import PropTypes from 'prop-types';
 //var React = require("react");
 //var PropTypes = require("prop-types");
 //var api = require("../utils/api");
 
 const SelectLanguage = props => {
-  const languages = ["All", "JavaScript", "Ruby", "CSS", "Python", "C#"];
+  const languages = ['All', 'JavaScript', 'Ruby', 'CSS', 'Python', 'C#'];
   return (
     <ul className="languages">
       {languages.map(lang => {
@@ -15,7 +15,7 @@ const SelectLanguage = props => {
             onClick={props.onSelect.bind(null, lang)}
             key={lang}
             style={
-              lang === props.selectedLanguage ? { color: "#FF198E" } : null
+              lang === props.selectedLanguage ? { color: '#FF198E' } : null
             }
           >
             {lang}
@@ -30,21 +30,19 @@ SelectLanguage.PropTypes = {
   selectedLanguage: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired
 };
-
-const RepoGrid = props =>
+// quick comment
+const RepoGrid = props => (
   <ul className="popular-list">
     {props.repos.map((repo, index) => {
       return (
         <li key={repo.name} className="popular-item">
-          <div className="popular-rank">
-            #{index + 1}
-          </div>
+          <div className="popular-rank">#{index + 1}</div>
           <ul className="space-list-items">
             <li>
               <img
                 className="avatar"
                 src={repo.owner.avatar_url}
-                alt={"Avatar for " + repo.owner.login}
+                alt={'Avatar for ' + repo.owner.login}
               />
             </li>
             <li>
@@ -52,17 +50,14 @@ const RepoGrid = props =>
                 {repo.name}
               </a>
             </li>
-            <li>
-              @{repo.owner.login}
-            </li>
-            <li>
-              {repo.stargazers_count} stars
-            </li>
+            <li>@{repo.owner.login}</li>
+            <li>{repo.stargazers_count} stars</li>
           </ul>
         </li>
       );
     })}
-  </ul>;
+  </ul>
+);
 
 RepoGrid.PropTypes = {
   repos: PropTypes.array.isRequired
@@ -70,7 +65,7 @@ RepoGrid.PropTypes = {
 
 class Popular extends React.Component {
   state = {
-    selectedLanguage: "All",
+    selectedLanguage: 'All',
     repos: null
   };
 
@@ -101,9 +96,11 @@ class Popular extends React.Component {
           selectedLanguage={this.state.selectedLanguage}
           onSelect={this.updateLanguage}
         />
-        {!this.state.repos
-          ? <p className="loading">LOADING...</p>
-          : <RepoGrid repos={this.state.repos} />}
+        {!this.state.repos ? (
+          <p className="loading">LOADING...</p>
+        ) : (
+          <RepoGrid repos={this.state.repos} />
+        )}
       </div>
     );
   }
